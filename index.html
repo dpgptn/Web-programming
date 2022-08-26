@@ -11,14 +11,31 @@
             console.log("Всем привет :)");
             console.error("Сообщение об ошибке");
             console.warn("Сообщение-предупреждение");
+
+            function notReadyAlert() {
+                alert('Sorry, not ready yet.\nИзвините, еще не готово.');
+                return false;
+            }
         </script>
-    </head>>    
+    </head>    
 
     <body>
         <div class="container">
             <a href="index.html" class="href">
             <h1 class="container-logo">CYBERSPACE STORE</h1>
             </a>
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html" class="href">&#128722 Товары</a></li>
+                    <li><a href="contacts.html" class="href" onclick="return notReadyAlert()">&#128222 Контакты</a></li>
+                    <li><a href="delivery.html" class="href" onclick="return notReadyAlert()">&#128230 Доставка</a></li>  
+                    <li><a href="promotions.html" class="href" onclick="return notReadyAlert()">&#128178 Акции</a></li>
+                </ul>
+                <div class="searchbox">
+                    <input type="search" placeholder="Поиск по товарам">
+                    <button>&#128269</button>
+                </div>
+            </nav>
             <hr color="darkred" class = "container-line">
             <div class="container-body"> 
                 <a href = 'product_card.html' class="main_href">
