@@ -46,6 +46,14 @@
                     card.style.backgroundColor = '';
                 }, 2000);
             }
+
+            function loaded() {
+                let searchbox = document.getElementById('search');
+                searchbox.addEventListener('keydown', function(key) {
+                    if(key.key == 'Enter')
+                        search();
+                });
+            }
         </script>
     </head>    
 
