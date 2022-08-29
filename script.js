@@ -1,10 +1,7 @@
-console.log("Всем привет :)");
-console.error("Сообщение об ошибке");
-console.warn("Сообщение-предупреждение");
-
 function showModal(messageText, buttonText) {
     let modal = document.getElementsByClassName('modal')[0];
-    modal.style.display = 'block';
+    modal.style.visibility = 'visible';
+    modal.style.opacity = '1';
 
     let message = modal.getElementsByClassName('message')[0];
     message.innerHTML = messageText;
@@ -13,20 +10,26 @@ function showModal(messageText, buttonText) {
 
     document.body.style.overflow = 'hidden';
     let overlay = document.getElementsByClassName('overlay')[0];
-    overlay.style.display = 'block';
-    return false;
+    overlay.style.visibility = 'visible';
+    overlay.style.opacity = '1';
 }
 
 function hideModal() {
     let modal = document.getElementsByClassName('modal')[0];
-    modal.style.display = 'none';
+    setTimeout(function() {
+        modal.style.visibility = 'hidden';
+    }, 350);
+    modal.style.opacity = '0';
 
     document.body.style.overflow = 'auto';
     let overlay = document.getElementsByClassName('overlay')[0];
-    overlay.style.display = 'none';
+    setTimeout(function() {
+        overlay.style.visibility = 'hidden';
+    }, 200);
+    overlay.style.opacity = '0';
 }
 function notReadyAlert() {
-    showModal('Sorry, not ready yet.<br>Извините, еще не готово.');
+    showModal('Sorry, not ready yet.<br>Извините, еще не готово.', 'OK');
     return false;
 }
 
